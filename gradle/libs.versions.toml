@@ -2,14 +2,14 @@
 agp = "9.2.1" # https://developer.android.com/reference/tools/gradle-api
 composeMultiplatform = "1.11.0" # https://github.com/JetBrains/compose-multiplatform/releases
 detekt = "2.0.0-alpha.3" # https://github.com/detekt/detekt/releases
-develocity = "4.4.1"
+develocity = "4.4.2"
 foojay = "1.0.0"
 gradlePublish = "2.1.1"
-hotReload = "1.1.0" # https://github.com/JetBrains/compose-hot-reload/releases
+hotReload = "1.1.1" # https://github.com/JetBrains/compose-hot-reload/releases
 java = "21"
 kotlinLang = "2.3.21" # https://kotlinlang.org/docs/releases.html#release-details
 ksp = "2.3.9" # https://github.com/google/ksp/releases
-metro = "1.0.0" # https://github.com/ZacSweers/metro/releases
+metro = "1.1.1" # https://github.com/ZacSweers/metro/releases
 room = "2.8.4" # https://developer.android.com/jetpack/androidx/releases/room
 serialization = "1.11.0" # https://github.com/Kotlin/kotlinx.serialization/releases
 truth = "1.4.5"
