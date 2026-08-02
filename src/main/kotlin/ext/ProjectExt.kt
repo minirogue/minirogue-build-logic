@@ -29,6 +29,8 @@ internal fun Project.isMultiplatform(): Boolean = plugins.hasPlugin(
 )
 
 context(project: Project)
-internal fun <T: Task> TaskProvider<T>.addToMinirogueCheck() {
-    project.tasks.named(MINIROGUE_CHECK_TASK) { dependsOn(this@addToMinirogueCheck) }
+internal fun <T : Task> TaskProvider<T>.addToMinirogueCheck() {
+    project.tasks.named(
+        MINIROGUE_CHECK_TASK
+    ) { dependsOn(this@addToMinirogueCheck) }
 }

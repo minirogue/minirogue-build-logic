@@ -37,7 +37,6 @@ private fun Project.createMinirogueCheckTask() {
     }
 }
 
-
 private fun Project.configureGradleChecker() {
     val gradleCheckerTaskProvider =
         tasks.register("checkGradleConfig", GradleCheckerTask::class.java) {
