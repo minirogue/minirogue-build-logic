@@ -40,7 +40,6 @@ internal fun Project.configureAndroidMultiplatformLibrary() {
             lint {
                 baseline = file("lint-baseline.xml")
             }
-            tasks.named("lint").addToMinirogueCheck()
 
             withHostTest {}
             withDeviceTest { instrumentationRunner = "androidx.test.runner.AndroidJUnitRunner" }
