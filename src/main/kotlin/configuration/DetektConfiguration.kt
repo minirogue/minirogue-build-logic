@@ -3,6 +3,7 @@ package configuration
 import dev.detekt.gradle.Detekt
 import dev.detekt.gradle.extensions.DetektExtension
 import dev.detekt.gradle.plugin.DetektPlugin
+import ext.addToMinirogueCheck
 import org.gradle.api.Project
 import task.CreateDetektConfigTask
 import task.MINIROGUE_TASK_GROUP
@@ -32,6 +33,7 @@ internal fun Project.configureDetekt() {
     tasks.withType(Detekt::class.java) {
         dependsOn(rootProject.tasks.getByName(CREATE_DETEKT_CONFIG_TASK))
     }
+    tasks.named("detekt").addToMinirogueCheck()
 
     extensions.configure(DetektExtension::class.java) {
         source.setFrom(

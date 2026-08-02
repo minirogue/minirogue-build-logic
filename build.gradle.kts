@@ -12,6 +12,9 @@ version = "0.3.1"
 
 kotlin {
     explicitApiWarning()
+    compilerOptions {
+        freeCompilerArgs.add("-Xcontext-parameters")
+    }
 }
 
 repositories {
