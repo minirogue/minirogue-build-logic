@@ -3,6 +3,7 @@ package configuration
 import com.android.build.api.dsl.ApplicationExtension
 import com.android.build.api.dsl.KotlinMultiplatformAndroidLibraryTarget
 import com.android.build.gradle.api.KotlinMultiplatformAndroidPlugin
+import ext.addToMinirogueCheck
 import ext.generateProjectNamespace
 import ext.getDateAsVersionName
 import org.gradle.api.JavaVersion
@@ -39,6 +40,7 @@ internal fun Project.configureAndroidMultiplatformLibrary() {
             lint {
                 baseline = file("lint-baseline.xml")
             }
+            tasks.named("lint").addToMinirogueCheck()
 
             withHostTest {}
             withDeviceTest { instrumentationRunner = "androidx.test.runner.AndroidJUnitRunner" }
@@ -77,6 +79,7 @@ internal fun Project.configureAndroidApp() {
         lint {
             baseline = file("lint-baseline.xml")
         }
+        tasks.named("lint").addToMinirogueCheck()
     }
 }
 private fun Project.configureCreateAndroidVersionCodeTask() {
