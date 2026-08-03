@@ -44,7 +44,7 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter-params")
     testImplementation(gradleTestKit())
     testImplementation(libs.truth)
-    testImplementation(platform("org.junit:junit-bom:6.1.0"))
+    testImplementation(platform("org.junit:junit-bom:6.1.2"))
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 
     implementation(libs.android.gradlePlugin)
