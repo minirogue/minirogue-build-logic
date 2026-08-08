@@ -62,7 +62,7 @@ As of version 0.3.2 the following dependencies and versions are used:
 - [Detekt](https://detekt.dev/changelog) = 2.0.0-alpha.5
 - [HotReload](https://github.com/JetBrains/compose-hot-reload/releases) = 1.1.1
 - [Java](https://www.java.com/releases/) = 21
-- [Kotlin](https://kotlinlang.org/docs/releases.html#release-details) = 2.3.21
+- [Kotlin](https://kotlinlang.org/docs/releases.html#release-details) = 2.4.10
 - [Kotlin Serialization](https://github.com/Kotlin/kotlinx.serialization/releases) = 1.11.0
 - [Kotlin Symbol Processing](https://github.com/google/ksp/releases) = 2.3.9
 - [Metro](https://github.com/ZacSweers/metro/releases) = 1.1.1
