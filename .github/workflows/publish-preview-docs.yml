@@ -2,7 +2,7 @@ name: publish preview docs
 on:
   push:
     branches:
-      - attempt-to-fix-release
+      - main
 permissions:
   contents: write
 jobs:
