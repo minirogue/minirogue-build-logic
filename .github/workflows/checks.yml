@@ -17,10 +17,18 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
       - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@v6
+        uses: gradle/actions/setup-gradle@v6.2.0
         with:
           build-scan-publish: true
           build-scan-terms-of-use-url: 'https://gradle.com/terms-of-service'
           build-scan-terms-of-use-agree: 'yes'
       - name: Gradle build and checks
         run: ./gradlew build detekt checkReadme publishToMavenLocal --continue && ./gradlew --stop
+      - uses: actions/setup-python@v5
+        with:
+          python-version: 3.x
+          cache: 'pip'
+          cache-dependency-path: 'requirements.txt'
+      - run: pip install -r requirements.txt
+      - name: build mkdocs
+        run: mkdocs build --strict

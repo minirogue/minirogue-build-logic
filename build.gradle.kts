@@ -1,4 +1,7 @@
+import org.gradle.kotlin.dsl.`kotlin-dsl`
+import org.gradle.kotlin.dsl.`maven-publish`
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import java.io.File
 
 plugins {
     `kotlin-dsl`
@@ -8,7 +11,7 @@ plugins {
 }
 
 group = "org.minirogue"
-version = "0.3.2"
+version = "0.3.3"
 
 kotlin {
     explicitApiWarning()
@@ -44,7 +47,7 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter-params")
     testImplementation(gradleTestKit())
     testImplementation(libs.truth)
-    testImplementation(platform("org.junit:junit-bom:6.1.0"))
+    testImplementation(platform("org.junit:junit-bom:6.1.2"))
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 
     implementation(libs.android.gradlePlugin)
@@ -91,14 +94,14 @@ gradlePlugin {
 // Add versions to this library's source code
 val generatedVersionSourceDir =
     layout.buildDirectory.dir("generated${File.separator}source${File.separator}versions")
-val readmeFile = rootProject.file("README.md")
+val versionDocFile = rootProject.file("docs/dependencies.md")
 tasks.register("generatePluginVersionSource").configure {
     val versionCatalogFile =
         layout.projectDirectory.file("gradle${File.separator}libs.versions.toml")
     inputs.file(versionCatalogFile)
     outputs.dir(generatedVersionSourceDir)
-    inputs.file(readmeFile)
-    outputs.file(readmeFile)
+    inputs.file(versionDocFile)
+    outputs.file(versionDocFile)
     doLast {
         val versionLines = extractVersionLines(versionCatalogFile.asFile)
         generatedVersionSourceDir.get().file("Versions.kt").asFile.apply {
@@ -112,9 +115,9 @@ tasks.register("generatePluginVersionSource").configure {
                 }
             )
         }
-        val readmeLines = readmeFile.readLines()
-        readmeFile.writeText(buildString {
-            readmeLines.forEach { readmeLine ->
+        val versionDocLines = versionDocFile.readLines()
+        versionDocFile.writeText(buildString {
+            versionDocLines.forEach { readmeLine ->
                 appendLine(
                     if (readmeLine.startsWith("-") && readmeLine.contains("=")) {
                         updateReadmeVersionLine(readmeLine, versionLines)
@@ -129,13 +132,13 @@ tasks.withType<KotlinCompile>().configureEach { dependsOn("generatePluginVersion
 tasks.withType<Jar>().configureEach { dependsOn("generatePluginVersionSource") }
 
 tasks.register("checkReadme").configure {
-    inputs.file(readmeFile)
+    inputs.file(versionDocFile)
     dependsOn("generatePluginVersionSource")
     doLast {
         val gitStatus = providers.exec {
             commandLine("git", "status")
         }.standardOutput.asText.get()
-        if (gitStatus.contains("README.md")) throw GradleException("README.md not up-to-date, please run ./gradlew generatePluginVersionSource (automatically run on most build jobs)")
+        if (gitStatus.contains("docs/dependencies.md")) throw GradleException("dependencies.md not up-to-date, please run ./gradlew generatePluginVersionSource (automatically run on most build jobs)")
     }
 }
 

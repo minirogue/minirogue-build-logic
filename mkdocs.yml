@@ -1,0 +1,62 @@
+site_name: Minirogue Build Logic
+site_author: Shawn Witte
+site_url: https://minirogue.github.io/minirogue-build-logic
+site_description: Documentation for Shawn Witte's personal Gradle convention plugins.
+repo_url: https://github.com/minirogue/minirogue-build-logic/
+
+plugins:
+  - search
+  - macros
+
+validation:
+  links:
+    unrecognized_links: warn
+
+extra:
+  version_name: 0.3.3
+  version:
+    provider: mike
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:mermaid2.fence_mermaid
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.details
+  - pymdownx.blocks.caption
+
+theme:
+  name: material
+  favicon: img/shawnicon.ico
+  logo: img/shawnicon.ico
+  palette:
+    # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep purple
+      accent: teal
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: deep purple
+      toggle:
+        icon: material/brightness-4
+        name: Switch to auto theme
