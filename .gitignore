@@ -40,5 +40,9 @@ bin/
 ### VS Code ###
 .vscode/
 
+### Python/MkDocs ###
+site
+.venv
+
 ### Mac OS ###
 .DS_Store

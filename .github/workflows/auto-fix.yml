@@ -23,7 +23,7 @@ jobs:
           build-scan-terms-of-use-url: 'https://gradle.com/terms-of-service'
           build-scan-terms-of-use-agree: 'yes'
       - name: Configure git
-        run: git config --global user.name "Shawn Witte" && git config --global user.email "shawn.l.witte@gmail.com"
+        run: git config --global user.name "auto-fix-bot[bot]" && git config --global user.email "shawn.l.witte@gmail.com"
       - name: Detekt Readme
         run: (./gradlew generatePluginVersionSource detekt --continue || true) && ./gradlew --stop
       - name: Commit and push automated fixes
