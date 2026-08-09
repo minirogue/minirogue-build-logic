@@ -1,4 +1,4 @@
-name: publish preview docs
+name: publish new version
 on:
   push:
     tags:
