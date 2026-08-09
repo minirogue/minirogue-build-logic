@@ -30,4 +30,5 @@ jobs:
           python-version: 3.x
           cache: 'pip'
           cache-dependency-path: 'requirements.txt'
+      - run: pip install -r requirements.txt
       - run: mike deploy --push --update-aliases $GITHUB_REF_NAME latest
