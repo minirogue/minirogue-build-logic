@@ -3,12 +3,5 @@
     "version": "development",
     "title": "development",
     "aliases": []
-  },
-  {
-    "version": "preview",
-    "title": "preview",
-    "aliases": [
-      "latest"
-    ]
   }
 ]
