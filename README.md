@@ -24,7 +24,7 @@ pluginManagement {
 Then add the following to the version catalog:
 ```toml
 [plugins]
-minirogue-plugin = { id = "com.github.minirogue", version = "0.3.2" }
+minirogue-plugin = { id = "com.github.minirogue", version = "0.3.3" }
 ``` 
 and finally add the following to the root project `build.gradle`
 ```groovy
