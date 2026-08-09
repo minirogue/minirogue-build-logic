@@ -1,5 +1,7 @@
-import org.gradle.internal.impldep.org.apache.commons.compress.harmony.pack200.PackingUtils.config
+import org.gradle.kotlin.dsl.`kotlin-dsl`
+import org.gradle.kotlin.dsl.`maven-publish`
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import java.io.File
 
 plugins {
     `kotlin-dsl`

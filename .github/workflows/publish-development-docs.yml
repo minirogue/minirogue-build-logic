@@ -1,4 +1,4 @@
-name: publish preview docs
+name: publish development docs
 on:
   push:
     branches:
@@ -22,4 +22,4 @@ jobs:
           cache: 'pip'
           cache-dependency-path: 'requirements.txt'
       - run: pip install -r requirements.txt
-      - run: mike deploy --push preview
+      - run: mike deploy --push development
