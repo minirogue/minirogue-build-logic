@@ -12,22 +12,26 @@
         <meta name="author" content="Shawn Witte">
       
       
+        <link rel="canonical" href="https://minirogue.github.io/minirogue-build-logic/preview/dependencies/">
+      
+      
+        <link rel="prev" href="..">
       
       
       
-      <link rel="icon" href="/minirogue-build-logic/preview/img/shawnicon.ico">
+      <link rel="icon" href="../img/shawnicon.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
-        <title>Minirogue Build Logic</title>
+        <title>Dependencies - Minirogue Build Logic</title>
       
     
     
-      <link rel="stylesheet" href="/minirogue-build-logic/preview/assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="/minirogue-build-logic/preview/assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -46,7 +50,7 @@
       
     
     
-    <script>__md_scope=new URL("/minirogue-build-logic/preview",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -71,6 +75,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#dependencies" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -87,9 +96,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/minirogue-build-logic/preview/." title="Minirogue Build Logic" class="md-header__button md-logo" aria-label="Minirogue Build Logic" data-md-component="logo">
+    <a href=".." title="Minirogue Build Logic" class="md-header__button md-logo" aria-label="Minirogue Build Logic" data-md-component="logo">
       
-  <img src="/minirogue-build-logic/preview/img/shawnicon.ico" alt="logo">
+  <img src="../img/shawnicon.ico" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -106,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              Dependencies
             
           </span>
         </div>
@@ -232,9 +241,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/minirogue-build-logic/preview/." title="Minirogue Build Logic" class="md-nav__button md-logo" aria-label="Minirogue Build Logic" data-md-component="logo">
+    <a href=".." title="Minirogue Build Logic" class="md-nav__button md-logo" aria-label="Minirogue Build Logic" data-md-component="logo">
       
-  <img src="/minirogue-build-logic/preview/img/shawnicon.ico" alt="logo">
+  <img src="../img/shawnicon.ico" alt="logo">
 
     </a>
     Minirogue Build Logic
@@ -261,7 +270,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/minirogue-build-logic/preview/." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         
   
   
@@ -280,10 +289,19 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/minirogue-build-logic/preview/dependencies/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -294,6 +312,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -315,6 +334,8 @@
   
   
   
+    
+  
   
 </nav>
                   </div>
@@ -326,8 +347,43 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+  
+  
+
+
+<h1 id="dependencies">Dependencies</h1>
+<p>This repo manages several dependencies (namely ones that have related gradle plugins) that will be inherited by any projects that consume it.
+As of version 0.3.2 the following dependencies and versions are used:</p>
+<ul>
+<li><a href="https://developer.android.com/build/releases/gradle-plugin">Android Gradle Plugin (AGP)</a> = 9.2.1</li>
+<li><a href="https://www.jetbrains.com/help/kotlin-multiplatform-dev/whats-new-compose-1610.html">ComposeMultiplatform</a> = 1.11.1</li>
+<li><a href="https://detekt.dev/changelog">Detekt</a> = 2.0.0-alpha.5</li>
+<li><a href="https://github.com/JetBrains/compose-hot-reload/releases">HotReload</a> = 1.1.1</li>
+<li><a href="https://www.java.com/releases/">Java</a> = 21</li>
+<li><a href="https://kotlinlang.org/docs/releases.html#release-details">Kotlin</a> = 2.3.21</li>
+<li><a href="https://github.com/Kotlin/kotlinx.serialization/releases">Kotlin Serialization</a> = 1.11.0</li>
+<li><a href="https://github.com/google/ksp/releases">Kotlin Symbol Processing</a> = 2.3.9</li>
+<li><a href="https://github.com/ZacSweers/metro/releases">Metro</a> = 1.1.1</li>
+<li><a href="https://developer.android.com/jetpack/androidx/releases/room">Room</a> = 2.8.4</li>
+</ul>
+<p>Minimum supported Gradle version: 9.4.1
+Latest tested Gradle version: 9.5.0</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -363,10 +419,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "/minirogue-build-logic/preview", "features": [], "search": "/minirogue-build-logic/preview/assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="/minirogue-build-logic/preview/assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
     
   </body>
