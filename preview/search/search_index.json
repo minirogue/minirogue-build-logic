@@ -1,0 +1,1 @@
+{"config":{"lang":["en"],"separator":"[\\s\\-]+","pipeline":["stopWordFilter"]},"docs":[{"location":"","title":"About","text":""},{"location":"#about-minirogue-build-logic","title":"About Minirogue Build Logic","text":"<p>This project is my own personal Gradle convention plugins. Note that they do not follow all recommended practices for larger teams.</p>"}]}
