@@ -32,7 +32,6 @@ public class JvmAppConventionPlugin : Plugin<Project> {
                 dependsOn("assemble")
                 dependsOn("test")
             }
-
         }
     }
 }
