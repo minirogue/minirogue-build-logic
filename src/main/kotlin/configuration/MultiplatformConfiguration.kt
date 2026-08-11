@@ -2,12 +2,14 @@ package configuration
 
 import org.gradle.api.Project
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
+import task.CI_CHECK_TASK
 import task.SourceType
 
 internal fun Project.configureKotlinMultiplatformAndroid() {
     configureAndroidMultiplatformLibrary()
     configureCreateSrc(SourceType.AndroidMultiplatform)
     configureTest(SourceType.AndroidMultiplatform)
+    tasks.named(CI_CHECK_TASK) { dependsOn("testAndroidHostTest") }
 }
 
 internal fun Project.configureKotlinMultiplatformJvm() {
@@ -17,6 +19,7 @@ internal fun Project.configureKotlinMultiplatformJvm() {
     }
     configureCreateSrc(SourceType.JvmMultiplatform)
     configureTest(SourceType.JvmMultiplatform)
+    tasks.named(CI_CHECK_TASK) { dependsOn("jvmTest") }
 }
 
 internal fun Project.configureKotlinMultiplatformIOS() {
@@ -30,4 +33,5 @@ internal fun Project.configureKotlinMultiplatformIOS() {
     }
     configureCreateSrc(SourceType.IosMultiplatform)
 //    configureTest(SourceType.IosMultiplatform) TODO
+//    tasks.named(CI_CHECK_TASK) { dependsOn("iosTest") } // TODO make sure this doesn't break non-mac environments
 }
