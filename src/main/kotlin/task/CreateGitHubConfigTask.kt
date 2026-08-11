@@ -57,16 +57,7 @@ internal open class CreateGitHubConfigTask @Inject constructor() : DefaultTask()
                     "          build-scan-terms-of-use-url: 'https://gradle.com/terms-of-service'",
                 )
                 println("          build-scan-terms-of-use-agree: 'yes'")
-                println(
-                    "        run: ./gradlew assembleDebug " +
-                        "testDebugUnitTest " +
-                        "jvmTest " +
-                        "detekt " +
-                        "lint " +
-                        "checkGradleConfig " +
-                        "--continue && " +
-                        "./gradlew --stop",
-                )
+                println("        run: ./gradlew ciChecks --continue ")
             }
         }
     }

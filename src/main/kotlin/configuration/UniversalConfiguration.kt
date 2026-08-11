@@ -3,6 +3,7 @@ package configuration
 import ext.isMultiplatform
 import org.gradle.api.Project
 import org.jetbrains.kotlin.gradle.dsl.HasConfigurableKotlinCompilerOptions
+import task.CI_CHECK_TASK
 import task.GradleCheckerTask
 import task.MINIROGUE_CHECK_TASK
 import task.MINIROGUE_TASK_GROUP
@@ -14,7 +15,7 @@ internal data class UniversalConfiguration(
 )
 
 internal fun Project.applyUniversalConfigurations(universalConfiguration: UniversalConfiguration) {
-    createMinirogueCheckTask()
+    createCustomAggregateTasks()
     if (universalConfiguration.useGradleCheckerTask) configureGradleChecker()
     configureDetekt()
     configureGitHubConfigTask()
@@ -30,10 +31,15 @@ internal fun Project.applyUniversalConfigurations(universalConfiguration: Univer
     }
 }
 
-private fun Project.createMinirogueCheckTask() {
+private fun Project.createCustomAggregateTasks() {
     tasks.register(MINIROGUE_CHECK_TASK) {
         group = MINIROGUE_TASK_GROUP
         description = "Runs standard non-test checks for this module, e.g. detekt, lint, etc."
+    }
+    tasks.register(CI_CHECK_TASK) {
+        group = MINIROGUE_TASK_GROUP
+        description = "Runs all standard CI checks"
+        dependsOn(MINIROGUE_CHECK_TASK)
     }
 }
 

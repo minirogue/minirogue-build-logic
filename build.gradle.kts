@@ -91,6 +91,14 @@ gradlePlugin {
     }
 }
 
+tasks.register("ciChecks") {
+    description = "Run all checks for CI"
+    dependsOn("build")
+    dependsOn("detekt")
+    dependsOn("checkReadme")
+    dependsOn("publishToMavenLocal")
+}
+
 // Add versions to this library's source code
 val generatedVersionSourceDir =
     layout.buildDirectory.dir("generated${File.separator}source${File.separator}versions")

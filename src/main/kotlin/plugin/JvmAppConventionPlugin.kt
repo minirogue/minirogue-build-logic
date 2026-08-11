@@ -4,7 +4,6 @@ import configuration.AddScriptsTaskConfiguration
 import configuration.UniversalConfiguration
 import configuration.applyUniversalConfigurations
 import configuration.configureCompose
-import configuration.configureDummyJvmCiTasks
 import configuration.configureJvm
 import configuration.configureJvmApp
 import configuration.configureMetro
@@ -12,6 +11,7 @@ import configuration.configureSerialization
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.file.DirectoryProperty
+import task.CI_CHECK_TASK
 
 public class JvmAppConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
@@ -28,7 +28,11 @@ public class JvmAppConventionPlugin : Plugin<Project> {
 
             applyUniversalConfigurations(jvmAppExtension.universalConfiguration)
             configureJvm()
-            configureDummyJvmCiTasks()
+            tasks.named(CI_CHECK_TASK) {
+                dependsOn("assemble")
+                dependsOn("test")
+            }
+
         }
     }
 }
