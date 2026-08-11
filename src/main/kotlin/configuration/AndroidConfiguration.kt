@@ -11,6 +11,7 @@ import org.gradle.api.Project
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 import org.jetbrains.kotlin.konan.file.File
+import task.CI_CHECK_TASK
 import task.CreateVersionCodeFileTask
 import task.GetGitCommitNumberTask
 import task.MINIROGUE_TASK_GROUP
@@ -79,6 +80,10 @@ internal fun Project.configureAndroidApp() {
             baseline = file("lint-baseline.xml")
         }
         tasks.named("lint").addToMinirogueCheck()
+    }
+    tasks.named(CI_CHECK_TASK) {
+        dependsOn("testDebugUnitTest")
+        dependsOn("assembleDebug")
     }
 }
 private fun Project.configureCreateAndroidVersionCodeTask() {
