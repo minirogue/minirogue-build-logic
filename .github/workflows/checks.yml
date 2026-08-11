@@ -24,7 +24,7 @@ jobs:
           build-scan-terms-of-use-agree: 'yes'
       - name: Gradle build and checks
         run: ./gradlew ciChecks --continue
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with:
           python-version: 3.x
           cache: 'pip'
