@@ -11,7 +11,7 @@ plugins {
 }
 
 group = "org.minirogue"
-version = "0.3.4"
+version = "0.3.5"
 
 kotlin {
     explicitApiWarning()
