@@ -25,7 +25,6 @@ internal fun Project.applyUniversalConfigurations(universalConfiguration: Univer
     configureAddScriptsTask(universalConfiguration.addScriptsTaskConfiguration)
     extensions.configure(HasConfigurableKotlinCompilerOptions::class.java) {
         compilerOptions {
-            freeCompilerArgs.add("-Xcontext-parameters")
             freeCompilerArgs.add("-Xexpect-actual-classes")
         }
     }
