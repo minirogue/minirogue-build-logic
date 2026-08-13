@@ -19,8 +19,8 @@ import versions.JAVA_VERSION
 import java.io.IOException
 
 private const val MIN_SDK = 23
-private const val COMPILE_SDK = 36
-private const val TARGET_SDK = 36
+private const val COMPILE_SDK = 37
+private const val TARGET_SDK = 37
 
 internal fun Project.configureAndroidMultiplatformLibrary() {
     with(pluginManager) { apply(KotlinMultiplatformAndroidPlugin::class.java) }
