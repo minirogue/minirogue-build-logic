@@ -3,7 +3,7 @@
 ### Importing the build logic
 This section assumes that the consuming project is a gradle project using a version catalog.
 
-Ensure that the following is in the consuming project's `settings.gradle` file:
+Ensure that the following is in the consuming project's `../settings.gradle.kts` file:
 ```groovy
 pluginManagement {
     resolutionStrategy {
