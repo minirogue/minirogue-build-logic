@@ -13,7 +13,7 @@ validation:
     unrecognized_links: warn
 
 extra:
-  version_name: 0.3.5
+  version_name: 0.3.6
   version:
     provider: mike
 
