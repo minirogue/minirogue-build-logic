@@ -36,3 +36,7 @@ complexity:
     active: false
   NamedArguments:
     active: true
+
+potential-bugs:
+  MissingPackageDeclaration:
+    active: true
