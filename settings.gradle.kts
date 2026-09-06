@@ -1,9 +1,3 @@
-pluginManagement {
-    repositories {
-//        gradlePluginPortal()
-    }
-}
-
 dependencyResolutionManagement {
     repositories {
         google()

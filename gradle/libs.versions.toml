@@ -7,7 +7,6 @@ foojay = "1.0.0"
 gradlePublish = "2.1.1"
 hotReload = "1.2.0" # https://github.com/JetBrains/compose-hot-reload/releases
 java = "21"
-kotlinDsl = "6.7.7"
 kotlinLang = "2.4.10" # https://kotlinlang.org/docs/releases.html#release-details
 ksp = "2.3.11" # https://github.com/google/ksp/releases
 metro = "1.4.2" # https://github.com/ZacSweers/metro/releases
@@ -22,7 +21,7 @@ compose-gradlePlugin = { group = "org.jetbrains.compose", name = "compose-gradle
 compose-hotReloadGradlePlugin = { group = "org.jetbrains.compose.hot-reload", name = "hot-reload-gradle-plugin", version.ref = "hotReload" }
 detekt-formatting = { group = "dev.detekt", name = "detekt-rules-ktlint-wrapper", version.ref = "detekt" }
 detekt-gradlePlugin = { group = "dev.detekt", name = "detekt-gradle-plugin", version.ref = "detekt" }
-develocity-gradlePlugin = {group="com.gradle", name = "develocity-gradle-plugin", version.ref = "develocity"}
+develocity-gradlePlugin = { group = "com.gradle", name = "develocity-gradle-plugin", version.ref = "develocity" }
 foojayResolver-gradlePlugin = { group = "org.gradle.toolchains.foojay-resolver", name = "org.gradle.toolchains.foojay-resolver.gradle.plugin", version.ref = "foojay" }
 kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlinLang" }
 ksp-gradlePlugin = { group = "com.google.devtools.ksp", name = "symbol-processing-gradle-plugin", version.ref = "ksp" }
@@ -30,10 +29,9 @@ metro-gradlePlugin = { group = "dev.zacsweers.metro", name = "gradle-plugin", ve
 room-gradlePlugin = { group = "androidx.room", name = "room-gradle-plugin", version.ref = "room" }
 serialization-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-serialization", version.ref = "kotlinLang" }
 truth = { group = "com.google.truth", name = "truth", version.ref = "truth" }
-kotlin-dsl= {group = "org.gradle.kotlin.kotlin-dsl",name="org.gradle.kotlin.kotlin-dsl.gradle.plugin", version.ref = "kotlinDsl"}
 # This dependency isn't used directly in this project, but the dependency is used in SerializationConfiguration
 serialization-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-core", version.ref = "serialization" }
 
 [plugins]
-gradle-publish = { id = "com.gradle.plugin-publish", version.ref = "gradlePublish" }
 detekt = { id = "dev.detekt", version.ref = "detekt" }
+gradle-publish = { id = "com.gradle.plugin-publish", version.ref = "gradlePublish" }
