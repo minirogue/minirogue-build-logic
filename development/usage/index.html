@@ -516,7 +516,7 @@
 <h2 id="usage">Usage</h2>
 <h3 id="importing-the-build-logic">Importing the build logic</h3>
 <p>This section assumes that the consuming project is a gradle project using a version catalog.</p>
-<p>Ensure that the following is in the consuming project's <code>settings.gradle</code> file:
+<p>Ensure that the following is in the consuming project's <code>settings.gradle.kts</code> file:</p>
 <div class="language-groovy highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">pluginManagement</span><span class="w"> </span><span class="o">{</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="n">resolutionStrategy</span><span class="w"> </span><span class="o">{</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">        </span><span class="n">eachPlugin</span><span class="w"> </span><span class="o">{</span>
@@ -528,29 +528,31 @@
 </span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">        </span><span class="n">maven</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="n">url</span><span class="w"> </span><span class="s2">"https://jitpack.io"</span><span class="w"> </span><span class="o">}</span>
 </span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="o">}</span>
 </span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="o">}</span>
-</span></code></pre></div></p>
-<p>Then add the following to the version catalog:
+</span></code></pre></div>
+<p>Then add the following to the version catalog:</p>
 <div class="language-toml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">[plugins]</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">minirogue-plugin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">"com.github.minirogue"</span><span class="p">,</span><span class="w"> </span><span class="n">version</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">"0.3.6"</span><span class="w"> </span><span class="p">}</span>
 </span></code></pre></div>
-and finally add the following to the root project <code>build.gradle</code>
+<p>and finally add the following to the root project <code>build.gradle</code></p>
 <div class="language-groovy highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">plugins</span><span class="w"> </span><span class="o">{</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="n">alias</span><span class="o">(</span><span class="n">libs</span><span class="o">.</span><span class="na">plugins</span><span class="o">.</span><span class="na">minirogue</span><span class="o">.</span><span class="na">plugin</span><span class="o">)</span><span class="w"> </span><span class="n">apply</span><span class="w"> </span><span class="kc">false</span>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="o">}</span>
-</span></code></pre></div></p>
+</span></code></pre></div>
 <h3 id="applying-and-using-the-plugins">Applying and using the plugins</h3>
-<p>Then the following plugins may be used for any gradle modules contained in the project:
-- <code>minirogue.multiplatform.library</code>
-- <code>minirogue.test.app</code>
-- <code>minirogue.android.app</code>
-- <code>minirogue.jvm.app</code></p>
-<p>Then you may use the <code>minirogue</code> extension in the <code>build.gradle</code> file using the plugin to configure it:
+<p>Then the following plugins may be used for any gradle modules contained in the project:</p>
+<ul>
+<li><code>minirogue.multiplatform.library</code></li>
+<li><code>minirogue.test.app</code></li>
+<li><code>minirogue.android.app</code></li>
+<li><code>minirogue.jvm.app</code></li>
+</ul>
+<p>Then you may use the <code>minirogue</code> extension in the <code>build.gradle</code> file using the plugin to configure it:</p>
 <div class="language-groovy highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">minirogue</span><span class="w"> </span><span class="o">{</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="n">android</span><span class="o">()</span>
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="n">ios</span><span class="o">()</span>
 </span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="n">metro</span><span class="o">()</span>
 </span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="o">}</span>
-</span></code></pre></div></p>
+</span></code></pre></div>
 
 
 
