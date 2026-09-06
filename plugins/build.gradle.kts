@@ -20,12 +20,6 @@ kotlin {
     }
 }
 
-repositories {
-    google()
-    mavenCentral()
-    gradlePluginPortal()
-}
-
 java {
     sourceCompatibility = JavaVersion.toVersion(libs.versions.java.get())
     targetCompatibility = JavaVersion.toVersion(libs.versions.java.get())
@@ -105,7 +99,7 @@ val generatedVersionSourceDir =
 val versionDocFile = rootProject.file("docs/dependencies.md")
 tasks.register("generatePluginVersionSource").configure {
     val versionCatalogFile =
-        layout.projectDirectory.file("gradle${File.separator}libs.versions.toml")
+        rootProject.layout.projectDirectory.file("gradle${File.separator}libs.versions.toml")
     inputs.file(versionCatalogFile)
     outputs.dir(generatedVersionSourceDir)
     inputs.file(versionDocFile)

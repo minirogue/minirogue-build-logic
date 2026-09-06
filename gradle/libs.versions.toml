@@ -21,7 +21,7 @@ compose-gradlePlugin = { group = "org.jetbrains.compose", name = "compose-gradle
 compose-hotReloadGradlePlugin = { group = "org.jetbrains.compose.hot-reload", name = "hot-reload-gradle-plugin", version.ref = "hotReload" }
 detekt-formatting = { group = "dev.detekt", name = "detekt-rules-ktlint-wrapper", version.ref = "detekt" }
 detekt-gradlePlugin = { group = "dev.detekt", name = "detekt-gradle-plugin", version.ref = "detekt" }
-develocity-gradlePlugin = {group="com.gradle", name = "develocity-gradle-plugin", version.ref = "develocity"}
+develocity-gradlePlugin = { group = "com.gradle", name = "develocity-gradle-plugin", version.ref = "develocity" }
 foojayResolver-gradlePlugin = { group = "org.gradle.toolchains.foojay-resolver", name = "org.gradle.toolchains.foojay-resolver.gradle.plugin", version.ref = "foojay" }
 kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlinLang" }
 ksp-gradlePlugin = { group = "com.google.devtools.ksp", name = "symbol-processing-gradle-plugin", version.ref = "ksp" }
@@ -33,5 +33,5 @@ truth = { group = "com.google.truth", name = "truth", version.ref = "truth" }
 serialization-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-core", version.ref = "serialization" }
 
 [plugins]
-gradle-publish = { id = "com.gradle.plugin-publish", version.ref = "gradlePublish" }
 detekt = { id = "dev.detekt", version.ref = "detekt" }
+gradle-publish = { id = "com.gradle.plugin-publish", version.ref = "gradlePublish" }
