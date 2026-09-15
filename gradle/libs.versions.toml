@@ -10,7 +10,7 @@ java = "21"
 kotlinLang = "2.4.20" # https://kotlinlang.org/docs/releases.html#release-details
 ksp = "2.3.11" # https://github.com/google/ksp/releases
 metro = "1.4.2" # https://github.com/ZacSweers/metro/releases
-room = "2.8.4" # https://developer.android.com/jetpack/androidx/releases/room
+room = "2.8.5" # https://developer.android.com/jetpack/androidx/releases/room
 serialization = "1.11.0" # https://github.com/Kotlin/kotlinx.serialization/releases
 truth = "1.4.5"
 
