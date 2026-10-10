@@ -2,14 +2,14 @@
 agp = "9.2.1" # https://developer.android.com/reference/tools/gradle-api
 composeMultiplatform = "1.12.0" # https://github.com/JetBrains/compose-multiplatform/releases
 detekt = "2.0.0-alpha.6" # https://github.com/detekt/detekt/releases
-develocity = "4.5.0"
+develocity = "4.5.1"
 foojay = "1.0.0"
-gradlePublish = "2.1.1"
+gradlePublish = "2.2.1"
 hotReload = "1.2.0" # https://github.com/JetBrains/compose-hot-reload/releases
 java = "21"
-kotlinLang = "2.4.10" # https://kotlinlang.org/docs/releases.html#release-details
+kotlinLang = "2.4.20" # https://kotlinlang.org/docs/releases.html#release-details
 ksp = "2.3.11" # https://github.com/google/ksp/releases
-metro = "1.4.2" # https://github.com/ZacSweers/metro/releases
+metro = "1.4.3" # https://github.com/ZacSweers/metro/releases
 room = "2.8.4" # https://developer.android.com/jetpack/androidx/releases/room
 serialization = "1.11.0" # https://github.com/Kotlin/kotlinx.serialization/releases
 truth = "1.4.5"
@@ -21,7 +21,7 @@ compose-gradlePlugin = { group = "org.jetbrains.compose", name = "compose-gradle
 compose-hotReloadGradlePlugin = { group = "org.jetbrains.compose.hot-reload", name = "hot-reload-gradle-plugin", version.ref = "hotReload" }
 detekt-formatting = { group = "dev.detekt", name = "detekt-rules-ktlint-wrapper", version.ref = "detekt" }
 detekt-gradlePlugin = { group = "dev.detekt", name = "detekt-gradle-plugin", version.ref = "detekt" }
-develocity-gradlePlugin = {group="com.gradle", name = "develocity-gradle-plugin", version.ref = "develocity"}
+develocity-gradlePlugin = { group = "com.gradle", name = "develocity-gradle-plugin", version.ref = "develocity" }
 foojayResolver-gradlePlugin = { group = "org.gradle.toolchains.foojay-resolver", name = "org.gradle.toolchains.foojay-resolver.gradle.plugin", version.ref = "foojay" }
 kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlinLang" }
 ksp-gradlePlugin = { group = "com.google.devtools.ksp", name = "symbol-processing-gradle-plugin", version.ref = "ksp" }
@@ -33,5 +33,5 @@ truth = { group = "com.google.truth", name = "truth", version.ref = "truth" }
 serialization-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-core", version.ref = "serialization" }
 
 [plugins]
-gradle-publish = { id = "com.gradle.plugin-publish", version.ref = "gradlePublish" }
 detekt = { id = "dev.detekt", version.ref = "detekt" }
+gradle-publish = { id = "com.gradle.plugin-publish", version.ref = "gradlePublish" }
