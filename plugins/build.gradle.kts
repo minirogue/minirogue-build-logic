@@ -11,7 +11,7 @@ plugins {
 }
 
 group = "org.minirogue"
-version = "0.3.7"
+version = findProperty("minirogue.version") as String
 
 kotlin {
     explicitApiWarning()
