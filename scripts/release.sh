@@ -9,8 +9,9 @@ git checkout main
 echo "Pulling latest..."
 git pull
 
-versionLineArr=($(grep "version = " build.gradle.kts))
-TAG_LABEL=$(echo "${versionLineArr[2]}" | tr -d '"')
+TAG_LABEL=$(grep "minirogue.version=" gradle.properties | cut -c 19-)
+
+echo "$TAG_LABEL"
 
 echo "Creating tag: $TAG_LABEL"
 git tag "$TAG_LABEL"
