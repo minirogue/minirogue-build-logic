@@ -3,9 +3,9 @@ package configuration
 import org.gradle.api.Project
 import org.gradle.api.tasks.Exec
 import org.gradle.kotlin.dsl.register
-import sun.jvmstat.monitor.MonitoredVmUtil.commandLine
-import sun.tools.jconsole.LabeledComponent.layout
-import task.BaselineScoreboardTask
+import org.jetbrains.compose.internal.utils.registerOrConfigure
+import task.ScoreboardTask
+import task.ScorecardTask
 import java.io.ByteArrayOutputStream
 
 internal fun Project.configureScoreboardTask() {
@@ -32,15 +32,21 @@ internal fun Project.configureScoreboardTask() {
                 if (!it.exists()) {
                     it.parentFile.mkdirs()
                     it.createNewFile()
-                   outStream.writeTo(it.outputStream())
+                    outStream.writeTo(it.outputStream())
                 }
             }
         }
     }
 
-        tasks.register<BaselineScoreboardTask>("scoreboard") {
-            dependsOn(baselineDiffTask)
-            baselineDiff.set(layout.buildDirectory.file("minirogue/baseline-diff.txt"))
-            scoreMap.set(provider { mapOf("TooManyFunctions" to 3) })
-        }
+    val scorecardTask = tasks.register<ScorecardTask>("scorecard") {
+        dependsOn(baselineDiffTask)
+        baselineDiff.set(layout.buildDirectory.file("minirogue/baseline-diff.txt"))
+        outputFile.set(layout.buildDirectory.file("minirogue/scorecard.json"))
+        scoreMap.set(provider { mapOf("TooManyFunctions" to 3) })
     }
+    rootProject.tasks.registerOrConfigure<ScoreboardTask>("scoreboard") {
+        inputFiles.builtBy(scorecardTask)
+        inputFiles.from(scorecardTask.map { it.outputFile.get() })
+        dependsOn(scorecardTask)
+    }
+}
