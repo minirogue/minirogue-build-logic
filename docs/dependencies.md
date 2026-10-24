@@ -9,7 +9,7 @@ As of version {{ version_name }} the following dependencies and versions are use
 - [HotReload](https://github.com/JetBrains/compose-hot-reload/releases) = 1.2.0
 - [Java](https://www.java.com/releases/) = 21
 - [Kotlin](https://kotlinlang.org/docs/releases.html#release-details) = 2.4.21
-- [Kotlin Serialization](https://github.com/Kotlin/kotlinx.serialization/releases) = 1.11.0
+- [Kotlin Serialization](https://github.com/Kotlin/kotlinx.serialization/releases) = 1.12.0
 - [Kotlin Symbol Processing](https://github.com/google/ksp/releases) = 2.3.12
 - [Metro](https://github.com/ZacSweers/metro/releases) = 1.4.5
 - [Room](https://developer.android.com/jetpack/androidx/releases/room) = 2.8.5
