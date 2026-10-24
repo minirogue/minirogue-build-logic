@@ -24,7 +24,7 @@ internal fun Project.configureKotlinMultiplatformJvm() {
 
 internal fun Project.configureKotlinMultiplatformIOS() {
     extensions.configure(KotlinMultiplatformExtension::class.java) {
-        listOf(iosX64(), iosArm64(), iosSimulatorArm64()).forEach {
+        listOf(iosArm64(), iosSimulatorArm64()).forEach {
             it.binaries.framework {
                 baseName = (project.parent?.name ?: "") + project.name
                 isStatic = true
