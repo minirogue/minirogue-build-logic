@@ -13,4 +13,5 @@ plugins {
 
 rootProject.name = "minirogue-build-logic"
 
-include(":plugins")
+include(":plugins:settings-plugin")
+include(":plugins:collected-plugins")

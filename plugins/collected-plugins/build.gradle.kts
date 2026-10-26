@@ -78,10 +78,6 @@ gradlePlugin {
             id = "minirogue.jvm.app"
             implementationClass = "plugin.JvmAppConventionPlugin"
         }
-        register("settings") {
-            id = "minirogue.settings"
-            implementationClass = "plugin.SettingsConventionPlugin"
-        }
     }
 }
 
