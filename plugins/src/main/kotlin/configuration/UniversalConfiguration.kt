@@ -23,6 +23,7 @@ internal fun Project.applyUniversalConfigurations(universalConfiguration: Univer
         if (isMultiplatform()) SourceType.CommonMultiplatform else SourceType.SinglePlatform,
     )
     configureAddScriptsTask(universalConfiguration.addScriptsTaskConfiguration)
+    configureScoreboardTask()
     extensions.configure(HasConfigurableKotlinCompilerOptions::class.java) {
         compilerOptions {
             freeCompilerArgs.add("-Xexpect-actual-classes")
