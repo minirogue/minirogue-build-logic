@@ -1,9 +1,6 @@
 package ext
 
 import org.gradle.api.Project
-import org.gradle.api.Task
-import org.gradle.api.tasks.TaskProvider
-import task.MINIROGUE_CHECK_TASK
 import java.time.Instant
 import java.time.ZoneOffset
 
@@ -27,10 +24,3 @@ internal fun Project.generateResourcePrefix(): String = modulePath.first { it !=
 internal fun Project.isMultiplatform(): Boolean = plugins.hasPlugin(
     "org.jetbrains.kotlin.multiplatform",
 )
-
-context(project: Project)
-internal fun <T : Task> TaskProvider<T>.addToMinirogueCheck() {
-    project.tasks.named(
-        MINIROGUE_CHECK_TASK,
-    ) { dependsOn(this@addToMinirogueCheck) }
-}
