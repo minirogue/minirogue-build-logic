@@ -24,7 +24,9 @@ internal abstract class ScoreboardTask : DefaultTask() {
                 )
                 moduleScores.forEach { score ->
                     scoreboard.merge(score.key, score.value) { a, b ->
-                        logger.lifecycle("adding score $b to ${score.key} from ${inputFile.path}")
+                        logger.lifecycle(
+                            "adding score $b to ${score.key} from ${inputFile.path}",
+                        )
                         a + b
                     }
                 }

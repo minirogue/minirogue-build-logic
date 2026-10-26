@@ -10,7 +10,7 @@ import task.ScorecardTask
 internal fun Project.configureScoreboardTask() {
     val baselineDiffTask = tasks.register<BaselineDiffTask>("baselineDiff") {
         baselineDiffFile.set(
-            layout.buildDirectory.file("minirogue/baseline-diff.txt")
+            layout.buildDirectory.file("minirogue/baseline-diff.txt"),
         )
     }
 
