@@ -1,10 +1,11 @@
-package plugin
+package io.github.minirogue.plugin
 
 import com.gradle.develocity.agent.gradle.DevelocityPlugin
 import org.gradle.api.Plugin
 import org.gradle.api.initialization.Settings
 import org.gradle.kotlin.dsl.develocity
 import org.gradle.toolchains.foojay.FoojayToolchainsConventionPlugin
+import kotlin.jvm.java
 
 public class SettingsConventionPlugin : Plugin<Settings> {
     override fun apply(target: Settings): Unit = with(target) {
