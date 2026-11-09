@@ -5,7 +5,7 @@ plugins {
     alias(libs.plugins.detekt)
 }
 
-group = "org.minirogue"
+group = "io.github.minirogue"
 version = findProperty("minirogue.version") as String
 
 kotlin {
@@ -40,7 +40,7 @@ dependencies {
 gradlePlugin {
     plugins {
         register("settings") {
-            id = "minirogue.settings"
+            id = "io.github.minirogue.plugins.settings"
             implementationClass = "io.github.minirogue.plugin.SettingsConventionPlugin"
         }
     }
