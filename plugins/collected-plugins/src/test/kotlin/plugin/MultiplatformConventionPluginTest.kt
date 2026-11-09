@@ -216,6 +216,6 @@ class MultiplatformConventionPluginTest {
 
     companion object {
         private const val LOCAL_BUILD_CACHE_DIRECTORY = "build-cache"
-        private const val PLUGIN_NAME = "minirogue.multiplatform.library"
+        private const val PLUGIN_NAME = "io.github.minirogue.plugins.multiplatform.library"
     }
 }
