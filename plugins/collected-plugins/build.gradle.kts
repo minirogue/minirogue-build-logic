@@ -57,6 +57,9 @@ dependencies {
     implementation(libs.room.gradlePlugin)
     implementation(libs.serialization.gradlePlugin)
 
+    compileOnly(libs.serialization.core)
+    compileOnly(libs.compose.material3)
+
     detektPlugins(libs.detekt.formatting)
 }
 
