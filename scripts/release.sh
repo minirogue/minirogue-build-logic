@@ -11,8 +11,6 @@ git pull
 
 TAG_LABEL=$(grep "minirogue.version=" gradle.properties | cut -c 19-)
 
-echo "$TAG_LABEL"
-
 echo "Creating tag: $TAG_LABEL"
 git tag "$TAG_LABEL"
 
