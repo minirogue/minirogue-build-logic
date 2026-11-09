@@ -1,5 +1,6 @@
 [versions]
 agp = "9.2.1" # https://developer.android.com/reference/tools/gradle-api
+composeMaterial3 = "1.9.0"
 composeMultiplatform = "1.12.2" # https://github.com/JetBrains/compose-multiplatform/releases
 detekt = "2.0.0-alpha.6" # https://github.com/detekt/detekt/releases
 develocity = "4.6.1"
@@ -19,6 +20,7 @@ android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", ver
 compose-compilerGradlePlugin = { group = "org.jetbrains.kotlin", name = "compose-compiler-gradle-plugin", version.ref = "kotlinLang" }
 compose-gradlePlugin = { group = "org.jetbrains.compose", name = "compose-gradle-plugin", version.ref = "composeMultiplatform" }
 compose-hotReloadGradlePlugin = { group = "org.jetbrains.compose.hot-reload", name = "hot-reload-gradle-plugin", version.ref = "hotReload" }
+compose-material3 = { group = "org.jetbrains.compose.material3", name = "material3", version.ref = "composeMaterial3" }
 detekt-formatting = { group = "dev.detekt", name = "detekt-rules-ktlint-wrapper", version.ref = "detekt" }
 detekt-gradlePlugin = { group = "dev.detekt", name = "detekt-gradle-plugin", version.ref = "detekt" }
 develocity-gradlePlugin = { group = "com.gradle", name = "develocity-gradle-plugin", version.ref = "develocity" }
@@ -27,10 +29,9 @@ kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-pl
 ksp-gradlePlugin = { group = "com.google.devtools.ksp", name = "symbol-processing-gradle-plugin", version.ref = "ksp" }
 metro-gradlePlugin = { group = "dev.zacsweers.metro", name = "gradle-plugin", version.ref = "metro" }
 room-gradlePlugin = { group = "androidx.room", name = "room-gradle-plugin", version.ref = "room" }
+serialization-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-core", version.ref = "serialization" }
 serialization-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-serialization", version.ref = "kotlinLang" }
 truth = { group = "com.google.truth", name = "truth", version.ref = "truth" }
-# This dependency isn't used directly in this project, but the dependency is used in SerializationConfiguration
-serialization-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-core", version.ref = "serialization" }
 
 [plugins]
 detekt = { id = "dev.detekt", version.ref = "detekt" }

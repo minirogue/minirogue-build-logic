@@ -10,7 +10,7 @@ plugins {
     alias(libs.plugins.detekt)
 }
 
-group = "org.minirogue"
+group = "io.github.minirogue"
 version = findProperty("minirogue.version") as String
 
 kotlin {
@@ -57,25 +57,28 @@ dependencies {
     implementation(libs.room.gradlePlugin)
     implementation(libs.serialization.gradlePlugin)
 
+    compileOnly(libs.serialization.core)
+    compileOnly(libs.compose.material3)
+
     detektPlugins(libs.detekt.formatting)
 }
 
 gradlePlugin {
     plugins {
         register("multiplatformLibrary") {
-            id = "minirogue.multiplatform.library"
+            id = "io.github.minirogue.plugins.multiplatform.library"
             implementationClass = "plugin.KotlinMultiplatformLibraryConventionPlugin"
         }
         register("testApp") {
-            id = "minirogue.test.app"
+            id = "io.github.minirogue.plugins.test.app"
             implementationClass = "plugin.TestAppPlugin"
         }
         register("androidApp") {
-            id = "minirogue.android.app"
+            id = "io.github.minirogue.plugins.android.app"
             implementationClass = "plugin.AndroidAppConventionPlugin"
         }
         register("jvmApp") {
-            id = "minirogue.jvm.app"
+            id = "io.github.minirogue.plugins.jvm.app"
             implementationClass = "plugin.JvmAppConventionPlugin"
         }
     }

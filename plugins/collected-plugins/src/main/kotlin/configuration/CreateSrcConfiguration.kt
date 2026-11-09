@@ -1,7 +1,7 @@
 package configuration
 
 import org.gradle.api.Project
-import task.ClearEmptyDirectoryTask
+import org.gradle.api.tasks.Exec
 import task.CreateSrcTask
 import task.MINIROGUE_TASK_GROUP
 import task.SourceType
@@ -13,10 +13,11 @@ internal fun Project.configureCreateSrc(srcType: SourceType) {
         CLEAR_EMPTY_DIRS_TASK_NAME,
     ) ?: rootProject.tasks.register(
         CLEAR_EMPTY_DIRS_TASK_NAME,
-        ClearEmptyDirectoryTask::class.java,
+        Exec::class.java,
     ) {
         group = MINIROGUE_TASK_GROUP
         description = "Recursively clears all empty directories"
+        commandLine("find", ".", "-type", "d", "-empty", "-delete")
     }
     tasks.named("clean").configure { finalizedBy(clearEmptyDirsTask) }
     val rootTask = tasks.findByName(
