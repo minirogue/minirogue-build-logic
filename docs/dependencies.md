@@ -15,4 +15,4 @@ As of version {{ version_name }} the following dependencies and versions are use
 - [Room](https://developer.android.com/jetpack/androidx/releases/room) = 2.8.5
 
 Minimum supported Gradle version: 9.4.1
-Latest tested Gradle version: 9.5.0
+Latest tested Gradle version: 9.9.0
