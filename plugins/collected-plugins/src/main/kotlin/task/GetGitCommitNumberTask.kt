@@ -6,6 +6,9 @@ import org.gradle.api.tasks.TaskAction
 import org.gradle.api.tasks.UntrackedTask
 import org.jetbrains.kotlin.konan.file.File
 
+@Deprecated(
+    "use `git rev-list --count HEAD` and set it as minirogue.build.number in CI script instead",
+)
 @UntrackedTask(
     because = "git process must be run to determine if it is actually up-to-date",
 )
