@@ -57,7 +57,11 @@ internal open class CreateGitHubConfigTask @Inject constructor() : DefaultTask()
                     "          build-scan-terms-of-use-url: 'https://gradle.com/terms-of-service'",
                 )
                 println("          build-scan-terms-of-use-agree: 'yes'")
-                println("        run: ./gradlew ciChecks --continue ")
+                println("        run: |")
+                println("          commitNumber=$(git rev-list --count HEAD)")
+                println(
+                    "          ./gradlew ciChecks --continue -Pminirogue.build.number=\$commitNumber",
+                )
             }
         }
     }

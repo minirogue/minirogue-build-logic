@@ -9,8 +9,9 @@ import org.gradle.api.tasks.PathSensitive
 import org.gradle.api.tasks.PathSensitivity
 import org.gradle.api.tasks.TaskAction
 
-// TODO determine if cacheability is actually beneficial here. I suspect not.
-// TODO add tests
+@Deprecated(
+    "use `git rev-list --count HEAD` and set it as minirogue.build.number in CI script instead",
+)
 @CacheableTask
 internal abstract class CreateVersionCodeFileTask : DefaultTask() {
     @get:InputFile
